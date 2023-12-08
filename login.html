@@ -1,5 +1,8 @@
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,11 +17,10 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="pan world project\project\index.html" >
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="mm.js"></script>
+  
 
 <style>
 body{
-background-image:url("assets/img/abstract-blue-geometric-shapes-background_1035-17545.wbp");
 background-size:cover;
 }
 .form-row{
@@ -26,9 +28,20 @@ background-size:cover;
   font-size: 20px;
   color: black;
 }
+.alert{
+    width: 100%;
+    background: rgb(0, 255, 106);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    display: none;
+}
 </style>
 </head>
 <body>
+  
  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -50,53 +63,59 @@ background-size:cover;
 
     </div>
   </header><!-- End Header -->
-<div class="form-style-8">
+  <div class="container">
+    <form action="" id="contactForm">
+      <div class="alert">Success</div>
+        <div>
+          <label for="name-input">Name:</label>
+          <input type="text" id="name-input" pattern="[A-Za-z]{3,}"required>
+          <span id="name-error" class="error"></span>
+        </div>
+      
+        <div>
+          <label for="email-input">Email:</label>
+          <input type="email" id="email-input" required>
+          <span id="email-error" class="error"></span>
+        </div>
+      
+        <div>
+          <label for="phone-input">Phone Number:</label>
+          <input type="tel" id="phone-input" pattern="[0-9]{10}" required>
+          <span id="phone-error" class="error"></span>
+        </div>
+      
+        <div>
+          <label for="dob-input">Date of Birth:</label>
+          <input type="date" id="dob-input" required>
+          <span id="dob-error" class="error"></span>
+        </div>
+      
+        <div>
+          <label for="address-input">Address:</label>
+          <textarea id="address-input" required></textarea>
+          <span id="address-error" class="error"></span>
+        </div>
+      
+        <div>
+          <label for="aadhar-input">Aadhar Number:</label>
+          <input type="text" id="aadhar-input" pattern="[0-9]{4} [0-9]{4} [0-9]{4}" required>
+          <span id="aadhar-error" class="error"></span>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
 
-<form id="registration-form" method="POST" action="app.js">
-<center>
-<h2 style="font-weight:bolder;">Registration Form</h2>
-</center>
-  <div>
-    <label for="name-input">Name:</label>
-    <input type="text" id="name-input" required>
-    <span id="name-error" class="error"></span>
+    </form>
   </div>
 
-  <div>
-    <label for="email-input">Email:</label>
-    <input type="email" id="email-input" required>
-    <span id="email-error" class="error"></span>
-  </div>
-
-  <div>
-    <label for="phone-input">Phone Number:</label>
-    <input type="tel" id="phone-input" pattern="[0-9]{10}" required>
-    <span id="phone-error" class="error"></span>
-  </div>
-
-  <div>
-    <label for="dob-input">Date of Birth:</label>
-    <input type="date" id="dob-input" required>
-    <span id="dob-error" class="error"></span>
-  </div>
-
-  <div>
-    <label for="address-input">Address:</label>
-    <textarea id="address-input" required></textarea>
-    <span id="address-error" class="error"></span>
-  </div>
-
-  <div>
-    <label for="aadhar-input">Aadhar Number:</label>
-    <input type="text" id="aadhar-input" pattern="[0-9]{4} [0-9]{4} [0-9]{4}" required>
-    <span id="aadhar-error" class="error"></span>
-  </div>
-
-  <button type="submit">Submit</button>
-</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="./mm.js"></script>
 
 
-</div>  
+
+
+
+
 
 
 </body>
